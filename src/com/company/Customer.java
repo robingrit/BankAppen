@@ -5,6 +5,7 @@ public class Customer {
     private String Lname;
     private long personummer;
     // lista med kundens alla konton
+    //test
 
 
     public String getFname() {
