@@ -1,28 +1,30 @@
 package com.company;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Customer {
     private String Fname;
-    private String Lname;
+
     private long personummer;
-    // lista med kundens alla konton
+    private List<Account> Accounts;
+    // lista med kundens alla Account
     //test
 
+
+    public Customer(String fname, Long personummer) {
+        this.personummer = personummer;
+        this.Fname = fname;
+        Accounts = new ArrayList<>();
+    }
 
     public String getFname() {
         return Fname;
     }
 
-    public void setFname(String fname) {
-        Fname = fname;
-    }
 
-    public String getLname() {
-        return Lname;
-    }
 
-    public void setLname(String lname) {
-        Lname = lname;
-    }
+
 
     public long getPersonummer() {
         return personummer;

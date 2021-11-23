@@ -6,8 +6,17 @@ import java.util.Scanner;
 
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws FileNotFoundException {
         // write your code here
+        Bank b = new Bank();
+        ReadFileAndInstantiateObjects(b);
+
+        System.out.println(b.getCustommersInfo());
+        System.out.println(b.getCustommer(199605213331L));
+
+
+
+
 
 
     }
@@ -16,15 +25,17 @@ public class Main {
             File file = new File("C:\\Users\\zorpi\\Desktop\\BankAppen\\src\\com\\company\\Customer.txt");
             Scanner scanner = new Scanner(file);
             while(scanner.hasNextLine()){
-                var line = scanner.nextLine();
-                var InfoLine = line.split(":");
-                var NameAge = InfoLine[0].split(",");
-                var gradesArr = InfoLine[1].split(",");
+                String line = scanner.nextLine();
+
+
+                var NamePnr = line.split(",");
+                //var gradesArr = InfoLine[1].split(",");
 
                 //Handle Name and Age
-                var StudentName = NameAge[0];
-                var StudentAge = Integer.parseInt(NameAge[1]);
-                //Customer  s = new Customer(StudentName, StudentAge);
+                var CustommerName = NamePnr[0];
+                var CustommerPersonummer = Long.parseLong(NamePnr[1]);
+                Customer  c = new Customer(CustommerName, CustommerPersonummer);
+                bank.AddCustomer(c);
 
 
                 ////Handle Grades
