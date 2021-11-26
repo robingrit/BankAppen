@@ -5,9 +5,6 @@ import java.util.Collection;
 import java.util.List;
 
 public class Bank {
-
-
-
      private List<Customer> Customers;
 
 
@@ -129,7 +126,7 @@ public class Bank {
         List<String> info = new ArrayList<>();
         for (var customer : Customers){
             if (persnum == customer.getPersonummer()){
-                info.add(customer.getFname() + customer.getPersonummer() +" är borta och alla konton");
+                info.add(customer.getFname() + customer.getPersonummer() +" är borta och alla konton pengarna får du på en avi");
                 Customers.remove(customer);
 
             }

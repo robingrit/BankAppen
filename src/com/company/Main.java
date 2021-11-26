@@ -16,11 +16,7 @@ public class Main {
         String CustommerName = "lisa";
         long CustommerPersonummer = 190105213331L;
         Customer  c = new Customer(CustommerName, CustommerPersonummer);
-
         b.AddCustomer(c);
-
-
-
 
 
 /*        for(var customer: b.getCustommersInfo()){
@@ -38,20 +34,25 @@ public class Main {
         System.out.println(b.getAccsInfo(199605213331L));
         b.withdraw(199605213331L, 1001,3);
         System.out.println(b.getAccsInfo(199605213331L));
-        b.CloseAccount(199605213331L,1002);
+        //System.out.println(b.CloseAccount(199605213331L,1002));
+        //b.CloseAccount(199605213331L,1002);
         System.out.println(b.getAccsInfo(199605213331L));
 
 
 
 
-       /* System.out.println(b.getCustommersInfo());
+
+        System.out.println(b.getCustommersInfo());
         System.out.println(b.getCustommer(199605213331L));
         b.ChangeCustommerName("Joel",199605213331L);
         System.out.println(b.getCustommer(199605213331L));
+        b.RemoveCustomer(199605213331L);
 
-        System.out.println(b.RemoveCustomer(199605213331L));
-        System.out.println(b.getCustommersInfo());
-        System.out.println(b.getAccsInfo(199605213331L));*/
+
+
+        //System.out.println(b.RemoveCustomer(199605213331L));
+        //System.out.println(b.getCustommersInfo());
+        //System.out.println(b.getAccsInfo(199605213331L));
 
 
 
