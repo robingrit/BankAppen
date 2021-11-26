@@ -23,7 +23,7 @@ public class Main {
             System.out.println(customer);
         }*/
 
-        b.AddAccount(199605213331L);
+        b.AddAccount(198402191111L);
 
         b.AddAccount(198402191111L);
         b.AddAccount(199605213331L);
@@ -42,11 +42,16 @@ public class Main {
 
 
 
-        System.out.println(b.getCustommersInfo());
-        System.out.println(b.getCustommer(199605213331L));
-        b.ChangeCustommerName("Joel",199605213331L);
-        System.out.println(b.getCustommer(199605213331L));
-        b.RemoveCustomer(199605213331L);
+        //System.out.println(b.getCustommersInfo());
+        //System.out.println(b.getCustommer(199605213331L));
+        //b.ChangeCustommerName("Joel",199605213331L);
+        //System.out.println(b.getCustommer(199605213331L));
+        //b.CloseAccount(198402191111L,1001);
+
+
+        //System.out.println(b.RemoveCustomer(198402191111L));
+
+        System.out.println(b.RemoveCustomer(199605213331L));
 
 
 

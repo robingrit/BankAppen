@@ -105,5 +105,18 @@ public class Customer {
         return accountnum;
     }
 
+    public String removeAccounts(){
+
+        StringBuilder builder = new StringBuilder();
+        for (var acc : Accounts){
+            builder.append(" Balance " ).append(String.valueOf(acc.getBalance()))
+                    .append(" Account number").append(String.valueOf(acc.getAccountNr()))
+                    .append(" Konto typ ").append(acc.getKontotyp()).append("\n");
+
+        }
+        Accounts.removeAll(Accounts);
+        String line = builder.toString();
+        return line;
+    }
 
 }
