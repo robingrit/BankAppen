@@ -4,12 +4,16 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Customer {
+
+     // State
+    // lagrar värden
     private String Fname;
 
     private long personummer;
-    private List<Account> Accounts;
     // lista med kundens alla Account
-    //test
+    private List<Account> Accounts;
+    //**************************
+
 
 
     public Customer(String fname, Long personummer) {
@@ -78,6 +82,15 @@ public class Customer {
         }
         return info;
     }
+    
+    public long gettaccnumber(){
+        long num = 0;
+        for (var acc: Accounts){
+            num = acc.getAccountNr();
+            
+             
+        }return num; 
+    }
 
 
     public long addAccount() {
@@ -109,9 +122,10 @@ public class Customer {
 
         StringBuilder builder = new StringBuilder();
         for (var acc : Accounts){
-            builder.append(" Balance " ).append(String.valueOf(acc.getBalance()))
-                    .append(" Account number").append(String.valueOf(acc.getAccountNr()))
-                    .append(" Konto typ ").append(acc.getKontotyp()).append("\n");
+            builder.append(" Account number:  ").append(String.valueOf(acc.getAccountNr()))
+
+                    .append(" Balance:  ").append(String.valueOf(acc.getBalance()))
+                    .append(" Kontotyp: ").append(acc.getKontotyp()).append("\n");
 
         }
         Accounts.removeAll(Accounts);

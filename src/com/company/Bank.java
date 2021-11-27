@@ -1,7 +1,7 @@
 package com.company;
 
 import java.util.ArrayList;
-import java.util.Collection;
+
 import java.util.List;
 
 public class Bank {
@@ -17,15 +17,18 @@ public class Bank {
     }
 
     // Skapar account till customer
-    public void AddAccount(long personummer) {
+    public long AddAccount(long personummer) {
         for (var customer : Customers) {
             if (personummer == customer.getPersonummer()) {
                 customer.addAccount();
+                return customer.gettaccnumber();
+                // retunera accnummer ?
+
             }
-        }
+        }return -1;
     }
 
-    // Får namnet till det personummret
+    // Får information om en specefik custommer
     public List<String> getCustommer(Long personummer) {
         List<String> cust = new ArrayList<>();
         for (var customer : Customers) {
@@ -69,6 +72,9 @@ public class Bank {
         List<String> info = new ArrayList<>();
         for (var cust : Customers) {
             if (cust.getPersonummer() == pnr) {
+                info.add(cust.getFname());
+                info.add("  ");
+
                 info.addAll(cust.getaccs());
             }
         }
@@ -100,7 +106,7 @@ public class Bank {
 
     // ändrar namn på en customer
     public boolean ChangeCustommerName(String nyaname, Long personummer) {
-
+        // Kollar igenom listan stämmer personummret gör if
         for (var customer : Customers) {
             if (personummer == customer.getPersonummer()) {
                 customer.setFname(nyaname);
@@ -114,9 +120,13 @@ public class Bank {
     //Remove custommer
     public List<String> RemoveCustomer(long persnum) {
         List<String> info = new ArrayList<>();
+        // Kollar igenom listan stämmer personummret gör if
+        // lägger till information i listan info
+        // Tar bort kunden sen stoppar Break;
         for (var customer : Customers) {
             if (persnum == customer.getPersonummer()) {
-                info.add(customer.getFname() + customer.getPersonummer() + " är borta och alla konton pengarna får du på en avi");
+                info.add("Customer:  "+customer.getFname() + "  " + customer.getPersonummer() +
+                        " Konton na som är bortaggna:");
                 info.add(customer.removeAccounts());
                 Customers.remove(customer);
                 break;
@@ -133,10 +143,13 @@ public class Bank {
 
         for (var customer : Customers) {
             if (persnum == customer.getPersonummer()) {
-                String borta = "kontot är borta";
+                //String borta = customer.removeAccounts() + "De kontot som är kvar är" ;
+
 
 
                 customer.Removeaccount(accountnumber);
+                //String borta = customer.getaccs() + "De kontot som är kvar är" ;
+                String borta = customer.removeAccounts() + "De kontot som är kvar är" ;
                 return borta;
 
             }

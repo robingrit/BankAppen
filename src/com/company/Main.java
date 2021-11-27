@@ -10,33 +10,51 @@ public class Main {
         // write your code here
         Bank b = new Bank();
 
+        // Skapar customers
         ReadFileAndInstantiateObjects(b);
 
-        // om  man vill manuelt skapa customer
+        // ----om  man vill manuelt skapa customer
         String CustommerName = "lisa";
         long CustommerPersonummer = 190105213331L;
         Customer  c = new Customer(CustommerName, CustommerPersonummer);
         b.AddCustomer(c);
+        /// -----
 
 
-/*        for(var customer: b.getCustommersInfo()){
-            System.out.println(customer);
-        }*/
 
+        /// Skapar konton
         b.AddAccount(198402191111L);
 
-        b.AddAccount(198402191111L);
         b.AddAccount(199605213331L);
+        b.AddAccount(199605213331L);
+        //--------------------------
 
-        //System.out.println(b.getAccsInfo(199605213331L));
+
+        // Får information om specefik kund
+        System.out.println(b.getCustommer(199605213331L));
+        // Ändrar namn  från Robin till lars
+        System.out.println(b.ChangeCustommerName("lars" , 199605213331L));
+        // Får information om specefik kund
+        System.out.println(b.getCustommer(199605213331L));
+        /// ----------------------
+
+        System.out.println(" *******************");
+        System.out.println(b.getAccsInfo(199605213331L));
+        System.out.println(" *******************");
         System.out.println(b.getAccsInfo(198402191111L));
+        System.out.println(" *******************");
         b.deposit(199605213331L, 1001,10);
+        System.out.println(" *******************");
         System.out.println(b.getAccsInfo(199605213331L));
+        System.out.println(" *******************");
         b.withdraw(199605213331L, 1001,3);
+        System.out.println("111111111111");
         System.out.println(b.getAccsInfo(199605213331L));
-        //System.out.println(b.CloseAccount(199605213331L,1002));
-        //b.CloseAccount(199605213331L,1002);
-        System.out.println(b.getAccsInfo(199605213331L));
+        System.out.println(" -----------");
+        System.out.println(b.CloseAccount(199605213331L,1002));
+        System.out.println(" ,,,,,,,,,,,,,");
+
+
 
 
 
@@ -51,20 +69,7 @@ public class Main {
 
         //System.out.println(b.RemoveCustomer(198402191111L));
 
-        System.out.println(b.RemoveCustomer(199605213331L));
-
-
-
         //System.out.println(b.RemoveCustomer(199605213331L));
-        //System.out.println(b.getCustommersInfo());
-        //System.out.println(b.getAccsInfo(199605213331L));
-
-
-
-
-
-
-
 
 
 
